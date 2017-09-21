@@ -12,6 +12,7 @@ public class Button extends Actor
     private GreenfootImage buttonImage1 = new GreenfootImage(100, 50);
     private GreenfootImage buttonImage2 = new GreenfootImage(100, 50);
     //need to add something here
+    private int value;
     private boolean justClicked = false;
     
     /**
@@ -26,12 +27,13 @@ public class Button extends Actor
         GreenfootImage text2 = new GreenfootImage(100 , 50);
 
         //need to add something here
+        value = 50;
 
         buttonImage1.setColor(Color.BLUE);
         buttonImage1.fillRect(0, 0, 100, 50);
         text1.setColor( Color.WHITE );
         text1.setFont( new Font( "Helvetica", Font.BOLD, 30 ) );
-        //text1.drawString("" + value, text1.getWidth()/3 + 1, text1.getHeight()/2 + 8);
+        text1.drawString("" + value, text1.getWidth()/3 + 1, text1.getHeight()/2 + 8);
 
         buttonImage1.drawImage( text1, 0, 0 );
 
@@ -61,17 +63,19 @@ public class Button extends Actor
         if( c.equals( Color.RED ) )
         {
             //need to add something here
+            value = -v;
         }
         else
         {
             //need to add something here
+            value = v;
         }
 
         buttonImage1.setColor(c);
         buttonImage1.fillRect(0, 0, 100, 50);
         text1.setColor( Color.WHITE );
         text1.setFont( new Font( "Helvetica", Font.BOLD, 30 ) );
-        //text1.drawString("" + value, text1.getWidth()/3 + 1, text1.getHeight()/2 + 8);
+        text1.drawString("" + value, text1.getWidth()/3 + 1, text1.getHeight()/2 + 8);
 
         buttonImage1.drawImage( text1, 0, 0 );
 
@@ -79,7 +83,7 @@ public class Button extends Actor
         buttonImage2.fillRect(0, 0, 100, 50);
         text2.setColor( Color.WHITE );
         text2.setFont( new Font( "Helvetica", Font.BOLD, 30 ) );
-        //text2.drawString("" + value, text2.getWidth()/3 + 1, text2.getHeight()/2 + 8);
+        text2.drawString("" + value, text2.getWidth()/3 + 1, text2.getHeight()/2 + 8);
 
         buttonImage2.drawImage( text2, 0, 0 );
 
@@ -107,6 +111,7 @@ public class Button extends Actor
             if( justClicked == true )
             {
                 //need to add something here
+                health.add( value );
                 justClicked = false;
             }
         }
